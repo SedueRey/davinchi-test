@@ -1,0 +1,32 @@
+$sizes: (
+	xs : 0px,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1140px,
+	xxl: 1440px
+);
+
+$size-xs: map-get($sizes, sm);
+$size-sm: map-get($sizes, sm);
+$size-md: map-get($sizes, md);
+$size-lg: map-get($sizes, lg);
+$size-xl: map-get($sizes, xl);
+
+@mixin respond-to($media) {
+    @if $media == xs {
+		@media (max-width: $size-xs) { @content }
+	}
+    @else if $media == sm {
+		@media (max-width: #{ $size-lg - 1 }) { @content }
+	}
+	@else if $media == md {
+		@media (max-width: #{ $size-lg - 1 }) { @content }
+	}
+	@else if $media == lg {
+		@media (max-width: #{ $size-xl - 1 }) { @content }
+	}
+	@else if $media == xl {
+		@media (min-width: $size-xl) { @content }
+	}
+}

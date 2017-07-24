@@ -1,0 +1,76 @@
+.marca-item {
+	display: inline-block;
+	border-radius: 10px;
+	font-size: $font-base-size;
+	width: 21%;
+	text-align: center;
+	position: relative;
+	height: 16.4rem;
+	color: $c8;
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-size: 85% auto;
+	transition: opacity 0.25s ease;
+	opacity: 1;
+	border: 5px solid $c1; 
+	&.marca-item--is-disabled {
+		border: 1px solid $c7;
+		opacity: 0.5;
+		&:hover{
+			opacity: 1;
+		}
+	}
+	&:nth-child(1) {
+		background-size: 91% auto;
+	}
+	&:nth-child(4) {
+		background-size: 100% auto;
+		.marca-item__name {
+			top: 26%;
+		}
+	}
+	@include respond-to(md) {
+		height: 20rem;
+		width: 46%;
+		margin: 0 0.5rem 2rem 0.5rem;
+	}
+	@include respond-to(xs) {
+		width: 100%;
+	}
+}
+
+
+.marca-item__cover-link {
+	color: inherit;
+	text-decoration: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-decoration: none;
+	color: inherit;
+}
+
+.marca-item__number {
+	font-weight: 400;
+	line-height: 1;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    padding: 0.5rem 0 0 0;
+    font-size: 3em;
+    font-family: $font-goals;
+    display: block;
+}
+
+.marca-item__name {
+	font-size: 1.1rem;
+	position: absolute;
+	left: 1rem;
+	right: 1rem;
+	top: 30%;
+	transform: translateY(-30%);
+	@include respond-to(md) {
+		top: 25%;
+	}
+}

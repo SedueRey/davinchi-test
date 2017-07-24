@@ -1,0 +1,43 @@
+.course-header {
+  padding: 0 0 1.35rem 0;
+
+  text-align: center;
+}
+
+.course-header__title {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1;
+
+  margin: 0 0 0 0;
+  padding: 20px 0 0 43px;
+
+  color: $c1;
+
+  @include respond-to(md) {
+    padding: 20px 0 0 0;
+  }
+  @include respond-to(xs) {
+    font-size: 1.4rem;
+  }
+}
+
+.course-header__description {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1;
+
+  margin: 0 0 0 0;
+  padding: 5px 0 0 31px;
+
+  letter-spacing: .001rem;
+
+  color: $c2;
+
+  @include respond-to(md) {
+    padding: 5px 0 0 0;
+  }
+  @include respond-to(xs) {
+    font-size: 1.2rem;
+  }
+}

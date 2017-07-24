@@ -1,0 +1,179 @@
+.goals {
+  min-height: 544px;
+  padding: 0 4rem;
+
+  background: darken($c1, 25%) no-repeat top left;
+  background-size: cover;
+
+  @include respond-to(md) {
+    min-height: 390px;
+    padding: 0 2rem;
+  }
+  @include respond-to(xs) {
+    padding: 0 2rem 2rem 2rem;
+
+    transition: height .15s linear;
+
+    will-change: height;
+  }
+}
+
+.goals__title {
+  font-family: $font-headers;
+  font-size: 6.2rem;
+  font-weight: 400;
+  line-height: 1;
+
+  margin: 0 0 0 0;
+  padding: 5.2rem 0 0 0;
+
+  text-transform: uppercase;
+
+  color: $c1;
+
+  @include respond-to(md) {
+    font-size: 4rem;
+
+    padding: 2.4rem 0 0 0;
+  }
+  @include respond-to(xs) {
+    text-align: center;
+  }
+}
+
+.goals__headline {
+  font-family: $font-goals;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+
+  margin: 1.4rem 0 2.3rem 0;
+
+  letter-spacing: .002em;
+
+  color: $c3;
+
+  @include respond-to(xs) {
+    text-align: center;
+  }
+}
+
+.goals__list {
+  font-size: 0;
+
+  max-width: 50rem;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+
+  list-style: none;
+
+  @include respond-to(md) {
+    max-width: 100%;
+  }
+}
+
+.goal {
+  font-size: $font-base-size;
+
+  position: relative;
+
+  display: inline-block;
+
+  width: 22.7rem;
+  height: 3.9rem;
+  margin: .21rem .6rem .5rem .5rem;
+
+  transition: width .15s linear;
+  vertical-align: top;
+
+  border: 1px solid $c4;
+
+  @include respond-to(md) {
+    width: calc(48% - .5rem);
+    height: 4.9rem;
+    margin: .21rem 1% .5rem 1%;
+  }
+  @include respond-to(xs) {
+    width: calc(98% - .5rem);
+  }
+  & + .js-goal-trigger {
+    display: none;
+  }
+}
+
+.goal.goal--is-disabled {
+  overflow: hidden;
+
+  width: 0rem;
+  margin: 0 0 0 0;
+
+  border: 0 none;
+  & ~ .js-goal-trigger {
+    display: inline-block;
+  }
+}
+
+.goal__link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: block;
+  overflow: hidden;
+
+  padding: 0 0 0 0;
+
+  transition: background-color .5s ease;
+  text-decoration: none;
+
+  color: $c5;
+  background: $c0 url('../assets/images/triangle-disabled.png') no-repeat 3px center;
+
+  will-change: background-color;
+  &:hover {
+    color: $c0;
+    background-color: $c4;
+  }
+}
+
+.goal__link-text {
+  font-size: .82rem;
+  line-height: 1.6;
+
+  position: absolute;
+  top: 50%;
+
+  padding: 0 1rem 0 4.2rem;
+
+  transform: translateY(-50%);
+
+  color: inherit;
+
+  @include respond-to(md) {
+    font-size: 1rem;
+  }
+}
+
+.js-goal-trigger {
+  width: 3.4rem;
+  height: 3.9rem;
+  margin: .21rem .6rem .5rem .5rem;
+
+  cursor: pointer;
+  transition: background-color .5s ease;
+
+  border: 1px solid $c4;
+  background: $c0 url('../assets/images/triangle-enabled.png') no-repeat 3px center;
+
+  will-change: background-color;
+  @include respond-to(md) {
+    height: 4.9rem;
+    margin: .21rem .25rem .5rem .25rem;
+  }
+  &:hover {
+    border: 1px solid $c6;
+    background: $c6 url('../assets/images/triangle-disabled.png') no-repeat 3px center;
+  }
+}

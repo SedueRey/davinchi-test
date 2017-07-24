@@ -1,0 +1,26 @@
+@import "./settings/grid";
+@import "./settings/sizes";
+
+@mixin col-width($number) {
+	width: calc(100% * #{$number / $grid-cols} - #{$grid-gutter});
+}
+
+@mixin col($number, $namespace: no) {
+    @if $namespace == no {
+        @include col-width($number);
+    } @else {
+        $width: map-get($sizes, $namespace);
+        @media screen and (min-width: $width) {
+            @include col-width($number);
+        }
+    }
+}
+
+@mixin l-col($number, $namespace, $width) {
+	@media screen and (min-width: $width) {
+		%l-col--#{$number}\@#{$namespace},
+		.l-col--#{$number}\@#{$namespace} {
+			@include col-width($number);
+		}
+	}
+}

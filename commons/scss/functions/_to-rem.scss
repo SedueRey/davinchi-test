@@ -1,0 +1,10 @@
+@import "../functions/strip-unit";
+
+$font-base-size: 13px;
+
+@function to-rem($px) {
+	$base: strip-unit($font-base-size);
+	$number: strip-unit($px);
+	@return ($number / $base) + rem;
+}
+

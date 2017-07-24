@@ -1,0 +1,24 @@
+{
+  "name": "davinchi-page1",
+  "version": "1.0.0",
+  "description": "Prueba para la página 1 para davinchi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eduardo Rey Jara",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-connect-php": "0.0.7",
+    "gulp-handlebars-html": "0.0.2",
+    "gulp-postcss": "^6.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "handlebars": "^4.0.10",
+    "normalize.scss": "^0.1.0"
+  }
+}
